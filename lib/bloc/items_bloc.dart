@@ -13,7 +13,6 @@ class ItemsBloc extends Bloc<ItemsEvent, ItemsState> {
       NotesService notesService = NotesService();
       List<NoteModel> res = await notesService.getAllNotes();
       emit(ItemsLoaded(item: res));
-        notesService.saveNotes(List.from(res));
     });
     on<AddItemCounter>((event, emit) {
       if(state is ItemsLoaded){
