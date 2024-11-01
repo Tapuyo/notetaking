@@ -17,9 +17,5 @@ class NoteModel with _$NoteModel {
   factory NoteModel.fromJson(Map<String, Object?> json)
       => _$NoteModelFromJson(json);
 
-  static List<NoteModel> item = [
-    NoteModel(title: '0', note: 'Coke'),
-    NoteModel(title: '1', note: 'Test'),
-  ];
 
 }

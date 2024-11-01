@@ -12,7 +12,6 @@ class NotesService {
     if (actionNote.isNotEmpty) {
       var data = json.decode(actionNote);
       for (var i in data) {
-        print(i);
         ntres.add(NoteModel.fromJson(i));
       }
     }
@@ -22,7 +21,6 @@ class NotesService {
   void saveNotes(List<NoteModel> ntList) async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     var saveNt = jsonEncode(ntList);
-    print(ntList);
     await prefs.setString('notes', saveNt);
   }
 }
